@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { Estudiante } from '../../Containers/estudiante';
 import { Curso } from '../../Containers/curso';
 import { Profesor } from '../../Containers/profesor';
+import { Pais } from '../../Containers/pais';
 import './container.css'
 export const ContainerMain = () =>{
     return(
@@ -39,6 +40,12 @@ export const ContainerMain = () =>{
                         icon:'News',
                         key:'ProfesoresNav',
 
+                    },{
+                        name:'Paises',
+                        url:'/Paises',
+                        icon:'News',
+                        key:'PaisesNav',
+
                     },]
                 }]}
             
@@ -50,6 +57,7 @@ export const ContainerMain = () =>{
                     <Route exact path="/estudiantes" component={Estudiante}/>
                     <Route exact path="/cursos" component={Curso}/>
                     <Route exact path="/profesores" component={Profesor}/>
+                    <Route exact path="/paises" component={Pais}/>
                 </Switch>
             </Router>
         </div>
