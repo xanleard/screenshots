@@ -32,6 +32,12 @@ export const ContainerMain = () =>{
                         icon:'News',
                         key:'CursosNav',
 
+                    },{
+                        name:'Profesores',
+                        url:'/Profesor',
+                        icon:'News',
+                        key:'ProfesoresNav',
+
                     },]
                 }]}
             
