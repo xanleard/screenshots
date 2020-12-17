@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { Estudiante } from '../../Containers/estudiante';
 import { Curso } from '../../Containers/curso';
+import { Profesor } from '../../Containers/profesor';
 import './container.css'
 export const ContainerMain = () =>{
     return(
@@ -34,7 +35,7 @@ export const ContainerMain = () =>{
 
                     },{
                         name:'Profesores',
-                        url:'/Profesor',
+                        url:'/Profesores',
                         icon:'News',
                         key:'ProfesoresNav',
 
@@ -48,6 +49,7 @@ export const ContainerMain = () =>{
                 <Switch>
                     <Route exact path="/estudiantes" component={Estudiante}/>
                     <Route exact path="/cursos" component={Curso}/>
+                    <Route exact path="/profesores" component={Profesor}/>
                 </Switch>
             </Router>
         </div>

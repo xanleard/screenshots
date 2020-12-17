@@ -19,7 +19,7 @@ export const Curso = () => {
     
     const fetchCursos = async () => {
         const response = await restClient.httpGet('/curso');
-
+        console.log(response.length);
         if (!response.length) {
             return;
         }

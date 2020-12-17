@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Dropdown, PrimaryButton, ProgressIndicator, TextField } from '@fluentui/react';
 import { restClient } from '../../Services/restClient';
 
-export const profesorForm = ({ fetchProfesores, profesorSeleccionado, acccion, onDismiss }) => {
+export const ProfesorForm = ({ fetchProfesores, profesorSeleccionado, acccion, onDismiss }) => {
     const [profesor, setProfesor] = useState({
         id: acccion === 'Edit' ? profesorSeleccionado.id : 0,
         nombre: acccion === 'Edit' ? profesorSeleccionado.nombre : '',      

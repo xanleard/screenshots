@@ -19,8 +19,9 @@ export const Profesor = () => {
     
     const fetchProfesores = async () => {
         const response = await restClient.httpGet('/profesor');
-
+        console.log(response);
         if (!response.length) {
+            
             return;
         }
         setProfesores(response.map(item => ({ ...item})));
@@ -51,6 +52,7 @@ export const Profesor = () => {
             const itemSeleccionado = seleccion.getSelection();
 
             setProfesor(itemSeleccionado.length ? itemSeleccionado[0] : null);
+            
         },
     });
 
@@ -64,7 +66,7 @@ export const Profesor = () => {
             return;
         }
 
-        const dataFilter = profesor && profesor.filter(item => item.nombre.toUpperCase().includes(value.toUpperCase()));
+        const dataFilter = profesores && profesores.filter(item => item.nombre.toUpperCase().includes(value.toUpperCase()));
 
         setFiltro(dataFilter);
     }
@@ -145,7 +147,7 @@ export const Profesor = () => {
 
             <div className="contenedorLista">
                 <ShimmeredDetailsList
-                    items={filtro.length ? filtro : profesor}
+                    items={filtro.length ? filtro : profesores}
                     columns={columns}
                     layoutMode={DetailsListLayoutMode.justified}
                     selection={seleccion}
@@ -163,7 +165,7 @@ export const Profesor = () => {
             >
                 <ProfesorForm // Este es el formulario que contiene los controles con la información
                     fetchProfesores={fetchProfesores} // Hace un GET a la API
-                    ProfesorSeleccionado={profesor || {}}
+                    profesorSeleccionado={profesor || {}}
                     acccion={acccion}
                     onDismiss={handleDismissClick}
                 />
