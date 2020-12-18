@@ -5,6 +5,7 @@ import { Estudiante } from '../../Containers/estudiante';
 import { Curso } from '../../Containers/curso';
 import { Profesor } from '../../Containers/profesor';
 import { Pais } from '../../Containers/pais';
+import { Usuario } from '../../Containers/usuario';
 import './container.css'
 export const ContainerMain = () =>{
     return(
@@ -46,6 +47,12 @@ export const ContainerMain = () =>{
                         icon:'News',
                         key:'PaisesNav',
 
+                    },{
+                        name:'Usuarios',
+                        url:'/Usuarios',
+                        icon:'News',
+                        key:'UsuariosNav',
+
                     },]
                 }]}
             
@@ -58,6 +65,7 @@ export const ContainerMain = () =>{
                     <Route exact path="/cursos" component={Curso}/>
                     <Route exact path="/profesores" component={Profesor}/>
                     <Route exact path="/paises" component={Pais}/>
+                    <Route exact path="/usuarios" component={Usuario}/>
                 </Switch>
             </Router>
         </div>
