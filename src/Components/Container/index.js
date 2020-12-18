@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { Estudiante } from '../../Containers/estudiante';
 import { Curso } from '../../Containers/curso';
 import { Profesor } from '../../Containers/profesor';
+import { Materia } from '../../Containers/materia';
 import { Pais } from '../../Containers/pais';
 import { Usuario } from '../../Containers/usuario';
 import { Header } from '../Header';
@@ -59,6 +60,12 @@ export const ContainerMain = () =>{
                         icon:'News',
                         key:'UsuariosNav',
 
+                    },{
+                        name:'Materias',
+                        url:'/Materias',
+                        icon:'News',
+                        key:'MateriasNav',
+
                     },]
                 }]}
             
@@ -72,6 +79,7 @@ export const ContainerMain = () =>{
                     <Route  path="/profesores" component={Profesor}/>
                     <Route  path="/paises" component={Pais}/>
                     <Route  path="/usuarios" component={Usuario}/>
+                    <Route  path="/materias" component={Materia}/>
                 </Switch>
             </Router>
         </div>
