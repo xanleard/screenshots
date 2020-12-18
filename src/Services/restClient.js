@@ -4,7 +4,12 @@ export class restClient {
     static httpGet = (url) => {
 
         return fetch(`${urlBase}${url}`)
-            .then(response => response.json())
+            .then(response => {
+                if (response.status === 400) {
+                    return response.text();
+                }
+                return response.json()
+            })
             .then(response => {
                 return response;
             });

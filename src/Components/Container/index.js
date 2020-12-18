@@ -6,11 +6,17 @@ import { Curso } from '../../Containers/curso';
 import { Profesor } from '../../Containers/profesor';
 import { Pais } from '../../Containers/pais';
 import { Usuario } from '../../Containers/usuario';
+import { Header } from '../Header';
 import './container.css'
 export const ContainerMain = () =>{
+    const handleNavClick = () => {
+
+    }
     return(
         <div className= "container">
+            <Header />
             <Nav
+                onLinkClick={handleNavClick}
                 selectedKey="key3"
                 ariaLabel="Nav basic example"
                 styles={{
@@ -61,11 +67,11 @@ export const ContainerMain = () =>{
 
             <Router>
                 <Switch>
-                    <Route exact path="/estudiantes" component={Estudiante}/>
-                    <Route exact path="/cursos" component={Curso}/>
-                    <Route exact path="/profesores" component={Profesor}/>
-                    <Route exact path="/paises" component={Pais}/>
-                    <Route exact path="/usuarios" component={Usuario}/>
+                    <Route  path="/estudiantes" component={Estudiante}/>
+                    <Route  path="/cursos" component={Curso}/>
+                    <Route  path="/profesores" component={Profesor}/>
+                    <Route  path="/paises" component={Pais}/>
+                    <Route  path="/usuarios" component={Usuario}/>
                 </Switch>
             </Router>
         </div>
